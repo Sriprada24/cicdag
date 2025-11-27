@@ -3,7 +3,7 @@ pipeline {
 
     tools {
         maven 'Maven-3'
-        nodejs 'Node-20'
+        nodejs 'Node-25'
     }
 
     environment {
