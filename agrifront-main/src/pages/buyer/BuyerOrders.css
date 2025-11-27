@@ -1,0 +1,49 @@
+.buyer-orders {
+  padding: 2rem;
+  background-color: grey;
+}
+
+.order-card {
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  margin-bottom: 1.5rem;
+  padding: 1rem 1.5rem;
+  background: #2e7d32;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+}
+
+.order-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+.status {
+  padding: 5px 10px;
+  border-radius: 20px;
+  font-size: 0.85rem;
+  font-weight: 500;
+  text-transform: capitalize;
+}
+
+.status.pending {
+  background-color: #fff4e5;
+  color: #f5a623;
+}
+
+.status.paid {
+  background-color: #e6f4ea;
+  color: #2e7d32;
+}
+
+.order-details ul {
+  padding-left: 1.2rem;
+  margin-top: 0.5rem;
+}
+
+.order-details .total {
+  margin-top: 1rem;
+  font-weight: bold;
+  font-size: 1.05rem;
+}

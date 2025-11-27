@@ -1,0 +1,17 @@
+.admin-stats {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.card {
+  flex: 1;
+  min-width: 200px;
+  background-color: #c8e6c9;
+  padding: 1.5rem;
+  border-radius: 10px;
+  text-align: center;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  font-size: 1.2rem;
+}

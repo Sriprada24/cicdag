@@ -1,0 +1,71 @@
+.buyer-dashboard {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    width: 1525px;
+  }
+  
+  .buyer-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #2e7d32;
+    color: white;
+    padding: 1rem 2rem;
+    font-size: 1.2rem;
+  }
+  
+  .buyer-body {
+    display: flex;
+    flex: 1;
+    height: 100%;
+  }
+  
+  .buyer-sidebar {
+    width: 220px;
+    background-color: #388e3c;
+    color: white;
+    padding: 20px;
+  }
+  
+  .buyer-sidebar ul {
+    list-style: none;
+    padding: 0;
+  }
+  
+  .buyer-sidebar li {
+    margin: 15px 0;
+  }
+  
+  .buyer-sidebar a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+  }
+  
+  .buyer-sidebar a.active {
+    text-decoration: underline;
+  }
+  
+  .buyer-content {
+    flex: 1;
+    padding: 2rem;
+    background-color: #f3fef4;
+    overflow-y: auto;
+  }
+  .buyer-logout {
+  margin-left: 1rem;
+}
+
+.buyer-logout button {
+  background-color: #c62828;
+  color: white;
+  padding: 5px 12px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.buyer-logout button:hover {
+  background-color: #b71c1c;
+}

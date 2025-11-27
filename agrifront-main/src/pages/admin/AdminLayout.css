@@ -1,0 +1,67 @@
+.admin-container {
+  display: flex;
+  min-height: 100vh;
+  width: 1500px;
+}
+
+.admin-sidebar {
+  width: 220px;
+  background-color: #2e7d32;
+  color: white;
+  padding: 20px;
+}
+
+.admin-sidebar h2 {
+  margin-bottom: 20px;
+}
+
+.admin-sidebar ul {
+  list-style: none;
+  padding: 0;
+}
+
+.admin-sidebar li {
+  margin: 15px 0;
+}
+
+.admin-sidebar a {
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.admin-sidebar a.active {
+  text-decoration: underline;
+}
+
+.admin-content {
+  flex: 1;
+  padding: 30px;
+  background: #f4f4f4;
+}
+
+.admin-stats, .admin-section {
+  display: flex;
+  flex-direction: column;
+}
+
+.card {
+  background: white;
+  padding: 20px;
+  margin-bottom: 15px;
+  border-left: 6px solid #2e7d32;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  background: white;
+  margin-top: 20px;
+}
+
+table th, table td {
+  padding: 12px;
+  border: 1px solid #ccc;
+  text-align: left;
+}
