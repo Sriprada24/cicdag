@@ -1,32 +1,25 @@
 pipeline {
     agent any
 
-    tools {
-        maven 'Maven-3'
-        nodejs 'Node-25'
-    }
-
     environment {
-        GIT_CREDENTIALS = credentials('github-token')
+        NODEJS_HOME = tool name: 'Node-20', type: 'jenkins.plugins.nodejs.tools.NodeJSInstallation'
+        MAVEN_HOME = tool name: 'Maven-3', type: 'hudson.tasks.Maven$MavenInstallation'
+        PATH = "${NODEJS_HOME}\\bin;${MAVEN_HOME}\\bin;${env.PATH}"
     }
 
     stages {
 
-        stage('Clone') {
+        stage('Checkout') {
             steps {
-                git branch: 'main',
-                    credentialsId: 'github-token',
-                    url: 'https://github.com/Sriprada24/cicdag.git'
+                git branch: 'main', url: 'https://github.com/Sriprada24/cicdag.git'
             }
         }
 
         stage('Build Frontend') {
             steps {
                 dir('agrifront-main') {
-                    sh '''
-                        npm install
-                        npm run build
-                    '''
+                    bat 'npm install'
+                    bat 'npm run build'
                 }
             }
         }
@@ -34,23 +27,15 @@ pipeline {
         stage('Build Backend') {
             steps {
                 dir('agriback-main') {
-                    sh '''
-                        mvn clean package -DskipTests
-                    '''
+                    bat 'mvn clean package -DskipTests'
                 }
             }
         }
 
         stage('Archive Artifacts') {
             steps {
-                archiveArtifacts artifacts: 'agriback-main/target/*.jar'
                 archiveArtifacts artifacts: 'agrifront-main/dist/**'
-            }
-        }
-
-        stage('Deploy') {
-            steps {
-                echo "Deploy stage – connect to server or Docker"
+                archiveArtifacts artifacts: 'agriback-main/target/*.jar'
             }
         }
     }
